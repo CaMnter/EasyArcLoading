@@ -12,7 +12,7 @@
     tools:context="com.camnter.easyarcloadingdemo.MainActivity">
 
     <com.camnter.easyarcloading.EasyArcLoading
-        android:layout_width="66dp"
-        android:layout_height="66dp" />
+        android:layout_width="48dp"
+        android:layout_height="48dp" />
 
 </LinearLayout>

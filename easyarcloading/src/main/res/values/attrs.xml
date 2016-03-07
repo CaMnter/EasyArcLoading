@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="EasyArcLoading">
+        <attr name="easyArcPadding" format="dimension" />
+        <attr name="eastArcExternalColor" format="color" />
+        <attr name="eastArcInternalColor" format="color" />
+        <attr name="eastArcExternalWidth" format="dimension" />
+        <attr name="eastArcInternalWidth" format="dimension" />
+    </declare-styleable>
+</resources>
