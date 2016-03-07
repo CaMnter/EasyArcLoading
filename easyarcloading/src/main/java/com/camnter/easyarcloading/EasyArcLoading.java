@@ -34,7 +34,7 @@ public class EasyArcLoading extends View {
 
     // 1/6
     private static final float DEFAULT_ARC_PADDING_SIDE_LENGTH_RATIO = 0.16666667f;
-    private static final float DEFAULT_VIEW_WRAP_CONTENT_SIDE_LENGTH = 48.0f;
+    private static final float DEFAULT_VIEW_WRAP_CONTENT_SIDE_LENGTH = 42.0f;
 
     /**************
      * Default px *
