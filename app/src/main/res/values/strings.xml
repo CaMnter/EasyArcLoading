@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">EasyArcLoading</string>
+    <string name="button_view">View</string>
+    <string name="button_dialog">Dialog</string>
+
+    <string name="dialog_content_text">Please wait...</string>
 </resources>

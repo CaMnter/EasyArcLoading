@@ -27,8 +27,8 @@ public class EasyArcLoading extends View {
     /**************
      * Default dp *
      **************/
-    private static final float DEFAULT_EXTERNAL_ARC_WIDTH = 2.2f;
-    private static final float DEFAULT_INTERNAL_ARC_WIDTH = 1.9f;
+    private static final float DEFAULT_EXTERNAL_ARC_WIDTH = 0.66f;
+    private static final float DEFAULT_INTERNAL_ARC_WIDTH = 0.5f;
 
     private static final float DEFAULT_VIEW_PADDING_DP = 3.0f;
 
@@ -122,8 +122,8 @@ public class EasyArcLoading extends View {
         this.easyArcPadding = typedArray.getDimension(R.styleable.EasyArcLoading_easyArcPadding, this.easyArcPadding);
         this.eastArcExternalColor = typedArray.getColor(R.styleable.EasyArcLoading_eastArcExternalColor, DEFAULT_EXTERNAL_ARC_COLOR);
         this.eastArcInternalColor = typedArray.getColor(R.styleable.EasyArcLoading_eastArcInternalColor, DEFAULT_INTERNAL_ARC_COLOR);
-        this.eastArcExternalWidth = typedArray.getDimension(R.styleable.EasyArcLoading_eastArcExternalWidth, DEFAULT_EXTERNAL_ARC_WIDTH);
-        this.eastArcInternalWidth = typedArray.getDimension(R.styleable.EasyArcLoading_eastArcInternalWidth, DEFAULT_INTERNAL_ARC_WIDTH);
+        this.eastArcExternalWidth = typedArray.getDimension(R.styleable.EasyArcLoading_eastArcExternalWidth, this.dp2px(DEFAULT_EXTERNAL_ARC_WIDTH));
+        this.eastArcInternalWidth = typedArray.getDimension(R.styleable.EasyArcLoading_eastArcInternalWidth, this.dp2px(DEFAULT_INTERNAL_ARC_WIDTH));
 
         this.externalPastTime = 0.0f;
         this.internalPastTime = 0.0f;
@@ -241,6 +241,7 @@ public class EasyArcLoading extends View {
         this.internalRectF.top = this.externalRectF.top + this.easyArcPadding;
         this.internalRectF.right = this.externalRectF.right - this.easyArcPadding;
         this.internalRectF.bottom = this.externalRectF.bottom - this.easyArcPadding;
+
     }
 
     private void updateLength(long timeInterval) {
