@@ -27,4 +27,11 @@
         <item name="android:background">@drawable/shape_dialog_easy_arc_loading</item>
     </style>
 
+    <style name="EasyArcLoadingDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
 </resources>

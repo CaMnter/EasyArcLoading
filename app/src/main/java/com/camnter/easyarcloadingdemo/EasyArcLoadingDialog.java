@@ -14,7 +14,7 @@ public class EasyArcLoadingDialog extends Dialog {
     private static final double DIALOG_DEVICE_LENGTH_RATIO = 0.87826086956522d;
 
     public EasyArcLoadingDialog(Context context) {
-        super(context);
+        super(context,R.style.EasyArcLoadingDialog);
         this.init(context);
     }
 

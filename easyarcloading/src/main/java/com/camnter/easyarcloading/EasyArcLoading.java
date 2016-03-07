@@ -294,22 +294,27 @@ public class EasyArcLoading extends View {
 
     public void setEasyArcPadding(float easyArcPadding) {
         this.easyArcPadding = easyArcPadding;
+        this.setupRectF();
     }
 
     public void setEastArcExternalColor(int eastArcExternalColor) {
         this.eastArcExternalColor = eastArcExternalColor;
+        this.externalPaint.setColor(this.eastArcExternalColor);
     }
 
     public void setEastArcInternalColor(int eastArcInternalColor) {
         this.eastArcInternalColor = eastArcInternalColor;
+        this.internalPaint.setColor(this.eastArcInternalColor);
     }
 
     public void setEastArcExternalWidth(float eastArcExternalWidth) {
-        this.eastArcExternalWidth = eastArcExternalWidth;
+        this.eastArcExternalWidth = this.dp2px(eastArcExternalWidth);
+        this.externalPaint.setStrokeWidth(this.eastArcExternalWidth);
     }
 
     public void setEastArcInternalWidth(float eastArcInternalWidth) {
-        this.eastArcInternalWidth = eastArcInternalWidth;
+        this.eastArcInternalWidth = this.dp2px(eastArcInternalWidth);
+        this.internalPaint.setStrokeWidth(this.eastArcInternalWidth);
     }
 
 }
