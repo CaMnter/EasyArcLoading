@@ -4,6 +4,12 @@
 
 ![EasyArcLoading_icon](https://github.com/CaMnter/EasyArcLoading/raw/master/screenshot/EasyArcLoading_icon.png)
 
+## Gradle
+
+```groovy
+com.camnter.easyarcloading:easyarcloading:1.0
+```
+
 
 ## Screenshot
 
