@@ -7,7 +7,9 @@
 ## Gradle
 
 ```groovy
-com.camnter.easyarcloading:easyarcloading:1.0
+dependencies {
+	com.camnter.easyarcloading:easyarcloading:1.0
+}
 ```
 
 
