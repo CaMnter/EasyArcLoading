@@ -8,7 +8,7 @@
 
 ```groovy
 dependencies {
-	com.camnter.easyarcloading:easyarcloading:1.0
+	compile 'com.camnter.easyarcloading:easyarcloading:1.0'
 }
 ```
 
