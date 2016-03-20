@@ -1,5 +1,9 @@
 ##EasyArcLoading
 
+![Language](https://img.shields.io/badge/language-Java-EE0000.svg) [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/CaMnter/EasyArcLoading/blob/master/LICENSE) 
+![Version](https://img.shields.io/badge/version-1.0-8470FF.svg) 
+ [ ![Download](https://api.bintray.com/packages/camnter/maven/easyarcloading/images/download.svg) ](https://bintray.com/camnter/maven/easyarcloading/_latestVersion)   
+
 **An interesting effect gif**
 
 ![EasyArcLoading_icon](https://github.com/CaMnter/EasyArcLoading/raw/master/screenshot/EasyArcLoading_icon.png)
