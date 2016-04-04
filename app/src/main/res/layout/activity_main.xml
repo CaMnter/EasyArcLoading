@@ -15,7 +15,7 @@
         style="@style/ButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_view" />
+        android:text="@string/button_view"/>
 
     <Button
         android:id="@+id/dialog_bt"
@@ -23,12 +23,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/view_bt"
-        android:text="@string/button_dialog" />
+        android:text="@string/button_dialog"/>
 
     <ViewStub
         android:id="@+id/dialog_cover_vs"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout="@layout/dialog_easy_arc_loading" />
+        android:layout="@layout/dialog_easy_arc_loading"/>
 
 </RelativeLayout>

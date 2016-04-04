@@ -17,10 +17,9 @@ public class ViewActivity extends AppCompatActivity {
         context.startActivity(new Intent(context, ViewActivity.class));
     }
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+
+    @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_view);
     }
-
 }

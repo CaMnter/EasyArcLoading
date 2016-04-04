@@ -113,17 +113,25 @@ public class EasyArcLoading extends View {
         this.init(context, attrs);
     }
 
+
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     private void init(Context context, AttributeSet attrs) {
         this.mMetrics = this.getResources().getDisplayMetrics();
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.EasyArcLoading);
 
-        this.easyArcPadding = typedArray.getDimension(R.styleable.EasyArcLoading_easyArcPadding, this.easyArcPadding);
-        this.eastArcExternalColor = typedArray.getColor(R.styleable.EasyArcLoading_eastArcExternalColor, DEFAULT_EXTERNAL_ARC_COLOR);
-        this.eastArcInternalColor = typedArray.getColor(R.styleable.EasyArcLoading_eastArcInternalColor, DEFAULT_INTERNAL_ARC_COLOR);
-        this.eastArcExternalWidth = typedArray.getDimension(R.styleable.EasyArcLoading_eastArcExternalWidth, this.dp2px(DEFAULT_EXTERNAL_ARC_WIDTH));
-        this.eastArcInternalWidth = typedArray.getDimension(R.styleable.EasyArcLoading_eastArcInternalWidth, this.dp2px(DEFAULT_INTERNAL_ARC_WIDTH));
+        this.easyArcPadding = typedArray.getDimension(R.styleable.EasyArcLoading_easyArcPadding,
+                this.easyArcPadding);
+        this.eastArcExternalColor = typedArray.getColor(
+                R.styleable.EasyArcLoading_eastArcExternalColor, DEFAULT_EXTERNAL_ARC_COLOR);
+        this.eastArcInternalColor = typedArray.getColor(
+                R.styleable.EasyArcLoading_eastArcInternalColor, DEFAULT_INTERNAL_ARC_COLOR);
+        this.eastArcExternalWidth = typedArray.getDimension(
+                R.styleable.EasyArcLoading_eastArcExternalWidth,
+                this.dp2px(DEFAULT_EXTERNAL_ARC_WIDTH));
+        this.eastArcInternalWidth = typedArray.getDimension(
+                R.styleable.EasyArcLoading_eastArcInternalWidth,
+                this.dp2px(DEFAULT_INTERNAL_ARC_WIDTH));
 
         this.externalPastTime = 0.0f;
         this.internalPastTime = 0.0f;
@@ -147,8 +155,8 @@ public class EasyArcLoading extends View {
         this.setupRectF();
     }
 
-    @Override
-    protected void onDraw(Canvas canvas) {
+
+    @Override protected void onDraw(Canvas canvas) {
         this.externalPaint.setStrokeCap(Paint.Cap.ROUND);
         this.internalPaint.setStrokeCap(Paint.Cap.ROUND);
 
@@ -159,12 +167,10 @@ public class EasyArcLoading extends View {
         this.updateLength(timeInterval);
 
         this.externalProgress += externalIncreaseProgress;
-        if (this.externalProgress > 360.0f)
-            this.externalProgress -= 360f;
+        if (this.externalProgress > 360.0f) this.externalProgress -= 360f;
 
         this.internalProgress += internalIncreaseProgress;
-        if (this.internalProgress > 360.0f)
-            this.internalProgress -= 360f;
+        if (this.internalProgress > 360.0f) this.internalProgress -= 360f;
 
         this.lastTimeAnimated = SystemClock.uptimeMillis();
 
@@ -180,8 +186,7 @@ public class EasyArcLoading extends View {
     }
 
 
-    @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+    @Override protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
         this.viewWidth = MeasureSpec.getSize(widthMeasureSpec);
@@ -215,8 +220,8 @@ public class EasyArcLoading extends View {
         this.setMeasuredDimension((int) resultWidth, (int) resultHeight);
     }
 
-    @Override
-    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+
+    @Override protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
         this.viewWidth = w;
         this.viewHeight = h;
@@ -224,13 +229,17 @@ public class EasyArcLoading extends View {
         this.invalidate();
     }
 
+
     private void setupRectF() {
         int paddingLeft = this.getPaddingLeft();
         int paddingTop = this.getPaddingTop();
         int paddingRight = this.getPaddingRight();
         int paddingBottom = this.getPaddingBottom();
 
-        this.easyArcPadding = this.easyArcPadding > 0.0f ? this.easyArcPadding : Math.min(this.viewWidth, this.viewHeight) * DEFAULT_ARC_PADDING_SIDE_LENGTH_RATIO;
+        this.easyArcPadding = this.easyArcPadding > 0.0f
+                              ? this.easyArcPadding
+                              : Math.min(this.viewWidth, this.viewHeight) *
+                                      DEFAULT_ARC_PADDING_SIDE_LENGTH_RATIO;
 
         this.externalRectF.left = paddingLeft + this.defaultViewPadding;
         this.externalRectF.top = paddingTop + this.defaultViewPadding;
@@ -241,8 +250,8 @@ public class EasyArcLoading extends View {
         this.internalRectF.top = this.externalRectF.top + this.easyArcPadding;
         this.internalRectF.right = this.externalRectF.right - this.easyArcPadding;
         this.internalRectF.bottom = this.externalRectF.bottom - this.easyArcPadding;
-
     }
+
 
     private void updateLength(long timeInterval) {
         if (this.externalIncreaseTime >= EXTERNAL_INCREASE_MAX_TIME) {
@@ -252,7 +261,8 @@ public class EasyArcLoading extends View {
                 this.externalIncreaseTime = 0;
                 this.externalIncrease = !this.externalIncrease;
             }
-            float distance = (float) Math.cos((this.externalPastTime / EXTERNAL_ANIMATION_TIME + 1) * Math.PI) / 2 + 0.5f;
+            float distance = (float) Math.cos(
+                    (this.externalPastTime / EXTERNAL_ANIMATION_TIME + 1) * Math.PI) / 2 + 0.5f;
             float lengthRange = (ARC_MAX_LENGTH - ARC_MIN_LENGTH);
 
             if (this.externalIncrease) {
@@ -273,7 +283,8 @@ public class EasyArcLoading extends View {
                 this.internalIncreaseTime = 0;
                 this.internalIncrease = !this.internalIncrease;
             }
-            float distance = (float) Math.cos((this.internalPastTime / INTERNAL_ANIMATION_TIME + 1) * Math.PI) / 2 + 0.5f;
+            float distance = (float) Math.cos(
+                    (this.internalPastTime / INTERNAL_ANIMATION_TIME + 1) * Math.PI) / 2 + 0.5f;
             float lengthRange = (ARC_MAX_LENGTH - ARC_MIN_LENGTH);
 
             if (this.internalIncrease) {
@@ -288,33 +299,38 @@ public class EasyArcLoading extends View {
         }
     }
 
+
     public float dp2px(float dp) {
         return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, this.mMetrics);
     }
+
 
     public void setEasyArcPadding(float easyArcPadding) {
         this.easyArcPadding = easyArcPadding;
         this.setupRectF();
     }
 
+
     public void setEastArcExternalColor(int eastArcExternalColor) {
         this.eastArcExternalColor = eastArcExternalColor;
         this.externalPaint.setColor(this.eastArcExternalColor);
     }
+
 
     public void setEastArcInternalColor(int eastArcInternalColor) {
         this.eastArcInternalColor = eastArcInternalColor;
         this.internalPaint.setColor(this.eastArcInternalColor);
     }
 
+
     public void setEastArcExternalWidth(float eastArcExternalWidth) {
         this.eastArcExternalWidth = this.dp2px(eastArcExternalWidth);
         this.externalPaint.setStrokeWidth(this.eastArcExternalWidth);
     }
 
+
     public void setEastArcInternalWidth(float eastArcInternalWidth) {
         this.eastArcInternalWidth = this.dp2px(eastArcInternalWidth);
         this.internalPaint.setStrokeWidth(this.eastArcInternalWidth);
     }
-
 }

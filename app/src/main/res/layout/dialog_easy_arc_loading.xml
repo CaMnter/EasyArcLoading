@@ -8,9 +8,9 @@
     android:orientation="horizontal">
 
     <com.camnter.easyarcloading.EasyArcLoading
-        app:eastArcExternalColor="#ffFBD10B"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        app:eastArcExternalColor="#ffFBD10B"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -19,7 +19,7 @@
         android:layout_marginStart="12dp"
         android:text="@string/dialog_content_text"
         android:textColor="@color/dialog_content_text"
-        android:textSize="14sp" />
+        android:textSize="14sp"/>
 
 </LinearLayout>
 

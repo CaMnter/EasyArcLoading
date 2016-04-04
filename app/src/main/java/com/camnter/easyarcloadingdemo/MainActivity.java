@@ -13,8 +13,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private EasyArcLoadingDialog dialog;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+
+    @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.findViewById(R.id.view_bt).setOnClickListener(this);
@@ -23,13 +23,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         this.dialog.setCanceledOnTouchOutside(true);
     }
 
+
     /**
      * Called when a view has been clicked.
      *
      * @param v The view that was clicked.
      */
-    @Override
-    public void onClick(View v) {
+    @Override public void onClick(View v) {
         switch (v.getId()) {
             case R.id.view_bt:
                 ViewActivity.startActivity(this);
@@ -39,5 +39,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
-
 }
